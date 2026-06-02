@@ -12,5 +12,11 @@ public class Demo1 {
         list.remove();
 
         System.out.println("LinkedList after removal: " + list);
+
+         Runnable root=()->{
+             System.out.println("yes");
+        };
+         root.run();
     }
+
 }
