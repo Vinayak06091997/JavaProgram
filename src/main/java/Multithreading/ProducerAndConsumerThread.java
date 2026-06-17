@@ -23,7 +23,6 @@ public class ProducerAndConsumerThread {
             }
             isItemPresent=false;
         }
-
     }
 
     public static void main(String[] args) {
