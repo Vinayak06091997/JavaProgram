@@ -133,7 +133,7 @@ public class ArrayStream {
 
         //21 sum of 2 array to 3rd array
 
-        int [] c=IntStream.range(0, a.length-1)
+        int [] c=IntStream.range(0, a.length)
                             .map(i->a[i]+b[i])
                             .toArray();
         System.out.println("Problem:-21     "+ Arrays.toString(c));

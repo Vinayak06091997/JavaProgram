@@ -44,7 +44,7 @@ public class BasicPrgm {
         System.out.println("Problem 5:  " + lowerCaseName);
 
         //6.        Find sum of all numbers using reduce
-        int sum = list.stream().reduce(1,Integer::sum);
+        int sum = list.stream().reduce(0, Integer::sum);
         // sum=list.stream().reduce((a,b)->a+b).get();
         System.out.println("Problem 6:  " + sum);
 
@@ -54,7 +54,7 @@ public class BasicPrgm {
         System.out.println("Problem 7:  " + product);
 
         //8.        Find maximum number using streams
-        int max = list.stream().reduce(1,Integer::max);
+        int max = list.stream().reduce(Integer.MIN_VALUE, Integer::max);
         System.out.println("Problem 8:  " + max);
 
         //9.       Find minimum number using streams

@@ -213,7 +213,9 @@ public class HardPrgm {
 
         //76. Dept-wise avg salary, sort depts desc
             Map<String, Double> avgSalarySorted = employees.stream()
-                    .collect(Collectors.groupingBy(Employee::getDept, Collectors.averagingInt(Employee::getSalary)))
+                    .collect(Collectors.groupingBy(
+                            Employee::getDept,
+                            Collectors.averagingInt(Employee::getSalary)))
                     .entrySet().stream()
                     .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
                     .collect(Collectors.toMap(
