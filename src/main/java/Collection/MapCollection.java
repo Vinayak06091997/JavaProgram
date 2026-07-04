@@ -9,14 +9,20 @@ public class MapCollection {
         //--------------------------------HashMap---------------------------------
         System.out.println("----------------------HashMap------------------------");
         Map<String,Integer> hashMap= new HashMap<>();
-        hashMap.put("vinayak",123);
+        hashMap.put("vinayak",4123);
         hashMap.put("MLP",1332);
-        hashMap.put("Nimbaragi",1234);
+        hashMap.put("Nimbaragi1",1234);
+        hashMap.put("Nimbaragi",01234);
         System.out.println("HashMap content:"+hashMap);
 
         for(Map.Entry<String,Integer> entry: hashMap.entrySet()){
             System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
         }
+
+        System.out.println("problem");
+        hashMap.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(e->{
+            System.out.println("Key: "+e.getKey()+" Value: "+e.getValue());
+        });
 
         //--------------------------LinkedHashList-------------------------------------
         System.out.println("----------------------LinkedHashMap------------------------");
