@@ -1,7 +1,7 @@
 package JavaStream;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ArrayStream {
@@ -129,8 +129,6 @@ public class ArrayStream {
                                     .orElseThrow();
         System.out.println("Problem:-20     "+ averageNumber);
 
-
-
         //21 sum of 2 array to 3rd array
 
         int [] c=IntStream.range(0, a.length)
@@ -144,5 +142,44 @@ public class ArrayStream {
                             .sum();
         System.out.println("Problem:-22     "+ sumAllElement);
 
+        //23 Merge two sorted arrays
+        int[] mergedArray=IntStream.concat(Arrays.stream(a),Arrays.stream(b))
+                            .sorted()
+                            .toArray();
+        System.out.println("Problem:-23     "+ Arrays.toString(mergedArray));
+
+        //24. Count duplicate elements
+        long duplicateCount=Arrays.stream(a)
+                            .filter(x->Arrays.stream(b).anyMatch(y->y==x))
+                            .count();
+        System.out.println("Problem:-24     "+ duplicateCount);
+
+        //25. Find the intersection of two arrays
+        int[] intersection=Arrays.stream(a)
+                            .filter(x->Arrays.stream(b).anyMatch(y->y==x))
+                            .toArray();
+        System.out.println("Problem:-25     "+ Arrays.toString(intersection));
+
+        //26.First duplicate element
+        Set<Integer> set = new HashSet<>();
+        int firstDuplicate = Arrays.stream(a)
+                .filter(x -> !set.add(x))
+                .findFirst()
+                .orElse(-1);
+
+        System.out.println("Problem:-26     " + firstDuplicate);
+
+        //27. Reverse an array
+        int[] reverse = IntStream.range(0, a.length)
+                .map(i -> a[a.length - 1 - i])
+                .toArray();
+
+        System.out.println("Problem:-28     " + Arrays.toString(reverse));
+
+        //29. Convert int[] to List<Integer>
+        List<Integer> list = Arrays.stream(a)
+                .boxed()
+                .toList();
+        System.out.println("Problem:-29     " + list);
     }
 }

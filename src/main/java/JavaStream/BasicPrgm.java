@@ -94,7 +94,7 @@ public class BasicPrgm {
         boolean AllArePositive=list.stream().allMatch(e->e>=0);
         System.out.println("Problem 17:  "+AllArePositive);
 
-        //18.	1Check if none of the numbers are negative
+        //18.	Check if none of the numbers are negative
         boolean noneOfTheNumbersAreNegative=list.stream().noneMatch(e->e<0);
         System.out.println("Problem 18:  "+noneOfTheNumbersAreNegative);
 

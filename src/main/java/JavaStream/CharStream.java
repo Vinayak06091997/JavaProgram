@@ -201,5 +201,13 @@ public class CharStream {
         boolean isAnagram = sorted1.equals(sorted2);
         System.out.println("Problem:-20    " + isAnagram);
 
+        //21.
+        String name1="I am Vinayak";
+        String[] nameArray = name1.split("\\s+");
+        String sortedName = Arrays.stream(nameArray)
+                .sorted(String.CASE_INSENSITIVE_ORDER)
+                .collect(Collectors.joining(" "));
+        System.out.println("Problem:-21    " + sortedName);
+
     }
 }
