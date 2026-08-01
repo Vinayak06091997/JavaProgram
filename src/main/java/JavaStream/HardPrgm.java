@@ -186,7 +186,7 @@ public class HardPrgm {
                             Employee::getDept,
                             Collectors.collectingAndThen(
                                     Collectors.toList(),
-                                    l -> l.stream()
+                                    employees1->employees1.stream()
                                             .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
                                             .toList()
                             )

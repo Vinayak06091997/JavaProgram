@@ -154,7 +154,7 @@ public class CharStream {
         //17.  Find the most frequent word in a sentence.
         String mostFrequent =
                 Arrays.stream(sentence.split("\\s+"))
-                        .collect(Collectors.groupingBy(w -> w, Collectors.counting()))
+                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                         .entrySet()
                         .stream()
                         .max(Map.Entry.comparingByValue())
@@ -200,6 +200,24 @@ public class CharStream {
 
         boolean isAnagram = sorted1.equals(sorted2);
         System.out.println("Problem:-20    " + isAnagram);
+
+        // Another way to check anagrams using streams.
+        String str2="Listen";
+        String str1 = "Listen";
+        str1 = str1.replaceAll("\\s", "").toLowerCase();
+        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+        if (str1.length() != str2.length()) {
+            System.out.println("Problem:-20    " + false);
+            return;
+        }
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+         Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        System.out.println("Problem:-20    " + Arrays.equals(charArray1, charArray2));
+
 
         //21.
         String name1="I am Vinayak";

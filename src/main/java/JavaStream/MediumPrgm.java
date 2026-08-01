@@ -268,6 +268,11 @@ public class MediumPrgm {
 
         //53.	Reverse a string using streams
 
+        System.out.println("String: "+
+                nameMine.chars()
+                        .mapToObj(c -> String.valueOf((char) c))
+                        .sorted().collect(Collectors.joining()));
+
         String reverseString=nameMine.chars()
                             .mapToObj(c->(char)c)
                             .collect(StringBuilder::new,

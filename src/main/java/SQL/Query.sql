@@ -203,3 +203,9 @@ where Salary >
           from Employee
           where Department = e.Department
       );
+
+26)
+SELECT *
+FROM Employee emp
+INNER JOIN Employee mgr ON emp.ManagerId = mgr.Id
+WHERE emp.Salary > mgr.Salary;
