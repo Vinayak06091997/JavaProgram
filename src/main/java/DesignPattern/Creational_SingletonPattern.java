@@ -1,6 +1,8 @@
 package DesignPattern;
 
 
+import java.util.logging.Logger;
+
 /*
 ==========================================
 Singleton Design Pattern
@@ -29,6 +31,7 @@ Advantages:
 */
 public class Creational_SingletonPattern {
 
+    private final Logger logger = Logger.getLogger(Creational_SingletonPattern.class.getName());
      private static Creational_SingletonPattern instance ;
 
         // Private constructor prevents object creation

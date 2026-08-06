@@ -32,7 +32,9 @@ public class CharStream {
                         Collectors.counting()
                 ))
                 .entrySet()
-                .stream().filter(e->e.getValue()==1)
+                .stream()
+                .filter(e->e.getValue()==1)
+              //  .map(e->e.getKey())
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElseThrow();
@@ -47,7 +49,8 @@ public class CharStream {
                         Collectors.counting()
                 ))
                 .entrySet()
-                .stream().filter(e->e.getValue()>1)
+                .stream()
+                .filter(e->e.getValue()>1)
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElseThrow();
