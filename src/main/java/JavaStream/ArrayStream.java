@@ -181,5 +181,25 @@ public class ArrayStream {
                 .boxed()
                 .toList();
         System.out.println("Problem:-29     " + list);
+
+        //30. prime Number using stream
+        int[] primeNumber=
+                IntStream.range(0,100)
+                        .filter(e-> IntStream.range(2,e)
+                                .noneMatch(x->e%x==0)).toArray();
+        System.out.println("Prime Numbers are: ");
+        for (int j : primeNumber) {
+            System.out.print(j + " ");
+        }
+
+        //31. fibonacci series using stream
+        final int[] a1 = {1};
+        final int[] b1 = {2};
+        IntStream.range(1,10).map(e->{
+                    int c1= a1[0] + b1[0];
+                    a1[0] = b1[0];
+                    b1[0] =c1;
+                    return c1;})
+                .forEach(System.out::println);
     }
 }
