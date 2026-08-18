@@ -1,13 +1,12 @@
 package JavaStream;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class ArrayStream {
 
-    public static void main(String[] args){
+     static void main(){
         int[] a= {1,2,3,4,5,1};
         int[] b= {6,7,8,9,0};
 
@@ -61,7 +60,7 @@ public class ArrayStream {
         int count=((int) Arrays.stream(a).filter(e -> e > 50).count());
         System.out.println("Problem:-10     "+ count);
 
-        //11. Find the second highest number in an int[].
+        //11. Find the second-highest number in an int[].
         int secondHighest=Arrays.stream(a)
                 .boxed()
                 .sorted(Comparator.reverseOrder())
@@ -70,7 +69,7 @@ public class ArrayStream {
                 .orElseThrow();
         System.out.println("Problem:-11     "+ secondHighest);
 
-        //12 Find the second lowest number in an int[].
+        //12 Find the second-lowest number in an int[].
         int secondLowest=Arrays.stream(a)
                 .sorted()
                 .skip(1)
@@ -193,12 +192,12 @@ public class ArrayStream {
             System.out.print(j + " ");
         }
 
-        //31. fibonacci series using stream
+        //31. Fibonacci series using stream
         System.out.println();
         System.out.println("Problem:-31");
         final int[] a1 = {0};
         final int[] b1 = {1};
-        IntStream.range(0,10).map(i ->{
+        IntStream.range(0,10).map(_ ->{
                     int current = a1[0];
                     int c1 = a1[0] + b1[0];
                     a1[0] = b1[0];
