@@ -3,6 +3,7 @@ package JavaStream;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ArrayStream {
 
@@ -131,7 +132,7 @@ public class ArrayStream {
 
         //21 sum of 2 array to 3rd array
 
-        int [] c=IntStream.range(0, a.length)
+        int [] c=IntStream.range(0, a.length-1)
                             .map(i->a[i]+b[i])
                             .toArray();
         System.out.println("Problem:-21     "+ Arrays.toString(c));
@@ -193,13 +194,28 @@ public class ArrayStream {
         }
 
         //31. fibonacci series using stream
-        final int[] a1 = {1};
-        final int[] b1 = {2};
-        IntStream.range(1,10).map(_ ->{
-                    int c1= a1[0] + b1[0];
+        System.out.println();
+        System.out.println("Problem:-31");
+        final int[] a1 = {0};
+        final int[] b1 = {1};
+        IntStream.range(0,10).map(i ->{
+                    int current = a1[0];
+                    int c1 = a1[0] + b1[0];
                     a1[0] = b1[0];
-                    b1[0] =c1;
-                    return c1;})
-                .forEach(System.out::println);
+                    b1[0] = c1;
+                    return current;
+                    })
+                    .forEach(i -> System.out.print(i + " "));
+
+        //or
+        System.out.println();
+        System.out.println("Problem:-31-1");
+        Stream.iterate(
+                        new int[]{0, 1},
+                        x -> new int[]{x[1], x[0] + x[1]}
+                )
+                .limit(10)
+                .map(x -> x[0])
+                .forEach(i->System.out.print(i + " "));
     }
 }
