@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class HardPrgm {
+public class HardProgram {
     static class Transaction {
         String user;
         double amount;
@@ -159,7 +159,7 @@ public class HardPrgm {
                 new Order(List.of(new Item("Pen"), new Item("Notebook")))
         );
 
-        //71. Second highest salary employee
+        //71. Second-highest salary employee
             Employee secondHighest = employees.stream()
                     .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
                     .skip(1)
@@ -169,7 +169,7 @@ public class HardPrgm {
             System.out.println("71: " + secondHighest);
 
 
-        //72. N-th highest salary employee
+        //72. N-th the highest salary employee
             int n = 3;
             Employee nthHighest = employees.stream()
                     .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
@@ -320,7 +320,9 @@ public class HardPrgm {
 
 
         //88. Check anagrams
-            boolean isAnagram = str1.chars().sorted().toArray().equals(str2.chars().sorted().toArray());
+            boolean isAnagram = Arrays.equals(  str1.chars().sorted().toArray(),
+                                                str2.chars().sorted().toArray()
+                                             );
         System.out.println("88: " + isAnagram);
 
 

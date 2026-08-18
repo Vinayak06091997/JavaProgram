@@ -3,13 +3,9 @@ package JavaStream;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
-public class BasicPrgm {
-    public static void main(String[] args) {
+public class BasicProm {
+     static void main() {
         List<Integer> list = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 101,-1);
 
         //1.        Program to print even numbers from the list
@@ -108,7 +104,7 @@ public class BasicPrgm {
         System.out.println("Problem 20:  "+limitElement);
 
 
-        // 21.	Find the second highest number
+        // 21.	Find the second-highest number
         int secondHighest=list.stream()
                 .sorted(Comparator.reverseOrder())
                 .skip(1)
@@ -117,13 +113,13 @@ public class BasicPrgm {
         System.out.println("Problem 21:  "+secondHighest);
 
 
-        //22.	Find the second lowest number
-        int secoudLowest=list.stream()
+        //22.	Find the second-lowest number
+        int secondLowest =list.stream()
                         .sorted()
                         .skip(1)
                         .findFirst()
                         .orElseThrow();
-        System.out.println("Problem 22:  "+secoudLowest);
+        System.out.println("Problem 22:  "+ secondLowest);
 
 
         //23.	Join a list of strings with comma
