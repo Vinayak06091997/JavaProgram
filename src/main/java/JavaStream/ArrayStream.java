@@ -195,7 +195,7 @@ public class ArrayStream {
         //31. fibonacci series using stream
         final int[] a1 = {1};
         final int[] b1 = {2};
-        IntStream.range(1,10).map(e->{
+        IntStream.range(1,10).map(_ ->{
                     int c1= a1[0] + b1[0];
                     a1[0] = b1[0];
                     b1[0] =c1;
