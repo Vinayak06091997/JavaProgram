@@ -1,0 +1,1 @@
+These patterns define how objects communicate and interact

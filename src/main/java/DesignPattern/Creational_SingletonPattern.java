@@ -26,6 +26,14 @@ Advantages:
 - Saves memory
 - Shared object
 - Easy access
+How to achieve Singleton Pattern in the code
+- Private Constructor
+- StaticMethod
+- Static Variable
+
+That's why Enum Is a Better Way for Singleton in Java
+-: Enum instances are inherently thread-safe,
+  and the JVM ensures that the instance is created only once, even in a multithreaded environment.
 
 ------------------------------------------
 */
