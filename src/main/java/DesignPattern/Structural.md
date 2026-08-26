@@ -1,0 +1,1 @@
+#### These patterns focus on objects composition and relationship
